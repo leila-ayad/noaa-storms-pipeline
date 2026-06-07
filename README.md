@@ -33,7 +33,7 @@ To run for a specific year:
 
 ## What I learned
 
-[Two or three sentences. Be specific. What was harder than expected? What would you do differently? This is the part hiring managers actually read.]
+Bash syntax had more gotchas than expected — small things like missing $ before variable names (mkdir -p RAW_DIR vs mkdir -p "$RAW_DIR"), using / instead of \ for line continuation, and the spacing rules inside [ ]. Each one caused a real error that wasn't obvious to diagnose. Next time, I'll test each step incrementally by echoing variables before using them (echo "$RAW_DIR") to catch missing $ or wrong paths early. Also, I'll read variable definitions carefully before using them in paths. For example, RAW_CSV already included the directory, so prepending $RAW_DIR again caused the unzip step to silently skip. I think it's the right call to include the directory name inside a variable, instead of just the file name, but I wasn't tuned in to that pattern when I started this project.
 
 ## Stack
 
